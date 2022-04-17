@@ -5,3 +5,5 @@ newrelic==4.12.0.113
 raven[flask]==6.10.0
 requests==2.21.0
 gunicorn==19.9.0
+grpcio==1.38.1
+grpcio_tools==1.38.1

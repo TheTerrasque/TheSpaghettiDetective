@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+service ImageAnalyze {
+    rpc AnalyzeImage(Image) returns (AnalyzedFrame) {}
+}
+
+message Image {
+    bytes Data = 1;
+}
+
+message Placement {
+    float X = 1;
+    float Y = 2;
+    float Width = 3;
+    float Height = 4;
+}
+
+message ObjectHit {
+    string Class = 1;
+    int32 ClassId = 2;
+    float Confidence = 3; 
+    Placement Placement = 4;
+}
+
+message AnalyzedFrame {
+    repeated ObjectHit Hits = 1;
+}

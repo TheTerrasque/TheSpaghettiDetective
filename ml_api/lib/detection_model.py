@@ -210,7 +210,7 @@ def detect(net, meta, image, thresh=.5, hier_thresh=.5, nms=.45, debug=False):
                     print(nameTag)
                     print(dets[j].prob[i])
                     print((b.x, b.y, b.w, b.h))
-                res.append((nameTag, dets[j].prob[i], (b.x, b.y, b.w, b.h)))
+                res.append((nameTag, dets[j].prob[i], (b.x, b.y, b.w, b.h), i))
     if debug:
         print("did range")
     res = sorted(res, key=lambda x: -x[1])
